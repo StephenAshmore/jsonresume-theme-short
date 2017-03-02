@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	
+
 	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
 
 	<style>
@@ -15,16 +15,17 @@
 	</style>
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-	
+
 	</head>
 	<body>
-	
+
 	<div id="resume">
 
 	{{#resume.basics}}
 	<section class="heading">
 		<header>
 			<h1>{{name}}</h1>
+			{{#if label}}{{label}}{{/if}}
 			<div class="contact">
 				{{#if email}}
 				<span class="detail">
@@ -43,11 +44,6 @@
 				{{/if}}
 			</div>
 		</header>
-
-
-		{{#if summary}}
-		<p>{{paragraphSplit summary}}</p>
-		{{/if}}
 
 		{{#if profiles.length}}
 			{{#each profiles}}
@@ -68,6 +64,10 @@
 				{{/if}}
 			</div>
 			{{/each}}
+		{{/if}}
+
+		{{#if summary}}
+		<p>{{paragraphSplit summary}}</p>
 		{{/if}}
 
 	</section>
@@ -190,7 +190,7 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.education.length}}
 	<section id="education">
 		<h2>Education</h2>
@@ -243,7 +243,7 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.awards.length}}
 	<section id="awards">
 		<h2>Awards</h2>
@@ -273,7 +273,7 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.publications.length}}
 	<section id="publications">
 		<h2>Publications</h2>
@@ -281,7 +281,7 @@
 		<div class="item">
 			{{#if name}}
 			<div class="name">
-				{{name}}
+				<b>{{name}}</b>
 			</div>
 			{{/if}}
 			{{#if publisher}}
@@ -302,6 +302,29 @@
 			{{#if summary}}
 			<div class="summary">
 				<p>{{summary}}</p>
+			</div>
+			{{/if}}
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
+	{{#if resume.projects.length}}
+	<section id="projects">
+		<h2>Projects</h2>
+		{{#each resume.projects}}
+		<div class="item">
+			<header>
+				{{#if name}}
+					<h3 class="name">{{name}}</h3>
+				{{/if}}
+				{{#if website}}
+					{{website}}
+				{{/if}}
+			</header>
+			{{#if summary}}
+			<div>
+				{{summary}}
 			</div>
 			{{/if}}
 		</div>
@@ -332,25 +355,15 @@
 	{{#if resume.interests.length}}
 	<section id="interests">
 		<h2>Interests</h2>
+		<ul class="keywords" style="list-style-type: none; margin:0; padding:0; overflow: hidden;">
 		{{#each resume.interests}}
-		<div class="item">
-			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
-			{{/if}}
-			{{#if keywords.length}}
-			<ul class="keywords">
-				{{#each keywords}}
-				<li>{{.}}</li>
-				{{/each}}
-			</ul>
-			{{/if}}
-		</div>
+
+			{{name}}{{#if @last}}{{else}},{{/if}}
 		{{/each}}
+		</ul>
 	</section>
 	{{/if}}
-	
+
 	{{#if resume.references.length}}
 	<section id="references">
 		<h2>References</h2>
@@ -370,8 +383,8 @@
 		{{/each}}
 	</section>
 	{{/if}}
-	
+
 	</div>
-	
+
 	</body>
 </html>

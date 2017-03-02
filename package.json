@@ -1,11 +1,11 @@
 {
-  "name": "jsonresume-theme-short",
-  "version": "0.1.7",
-  "description": "Simple to the point theme for JSON Resume",
-  "author": "Graeme Maciver",
+  "name": "jsonresume-theme-short-stephenfork",
+  "version": "0.1.0",
+  "description": "Small changes to Graeme Maciver's theme.",
+  "author": "Stephen Ashmore",
   "repository": {
     "type": "git",
-    "url": "https://github.com/isnotahippy/jsonresume-theme-short"
+    "url": "https://github.com/StephenAshmore/jsonresume-theme-short-stephenfork"
   },
   "license": "MIT",
   "dependencies": {

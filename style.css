@@ -14,7 +14,7 @@ p {
 }
 
 a {
-	color: #2C85B1;
+	color: #ef473a;
 	text-decoration: none;
 	font-weight: 400;
 }
@@ -34,7 +34,7 @@ blockquote {
 }
 
 /* Resume heading */
-.heading header { 
+.heading header {
 
 }
 
@@ -69,14 +69,14 @@ section h2 {
 	font-size: 140%;
 	margin: 0 0 1em;
 	text-transform: uppercase;
-	color: #BC1B39;
+	color: #870734;
 	font-weight: 400;
 }
 
 /* Experience items */
 .item {
 	margin: 0 0 1em;
-	padding: 0 0 1em;
+	/*padding: 0 0 1em;*/
 	border-bottom: 1px solid #F2EBEC;
 }
 
@@ -113,8 +113,8 @@ section h2 {
 
 /* skills */
 #skills .item {
-	margin: 0.5em 0;
-	padding: 0 0 0.5em;
+	margin: 0.6em 0;
+	padding: 0 0 0.6em;
 	font-size: 90%;
 }
 
@@ -122,7 +122,7 @@ section h2 {
 	font-weight: 600;
 	display: inline-block;
 	text-transform: uppercase;
-	margin: 0 1em 0 0;
+	margin: 0.5em 1.5em 0 0;
 	width: 23%;
 	vertical-align: top;
 }
@@ -133,6 +133,11 @@ section h2 {
 	vertical-align: top;
 }
 
+.horiz-list {
+	float:left;
+	padding: 6px;
+}
+
 /* education */
 #education .item {
 	display: inline-block;
@@ -140,5 +145,3 @@ section h2 {
 	width: 49.5%;
 	border-bottom: 0;
 }
-
-
