@@ -291,7 +291,7 @@
 			{{/if}}
 			{{#if releaseDate}}
 			<div class="releaseDate">
-				{{releaseDate}}
+				{{date releaseDate}}
 			</div>
 			{{/if}}
 			{{#if website}}
