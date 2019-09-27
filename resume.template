@@ -73,28 +73,6 @@
 	</section>
 	{{/resume.basics}}
 
-	{{#if resume.skills.length}}
-	<section id="skills">
-		<h2>Skills</h2>
-		{{#each resume.skills}}
-		<div class="item">
-			{{#if name}}
-			<div class="name">
-				{{name}}
-			</div>
-			{{/if}}
-			{{#if keywords.length}}
-			<div class="keywords">
-				{{#each keywords}}
-					{{.}}{{#if @last}}{{else}},{{/if}}
-				{{/each}}
-			</div>
-			{{/if}}
-		</div>
-		{{/each}}
-	</section>
-	{{/if}}
-
 	{{#if resume.work.length}}
 	<section class="experience">
 		<h2>Experience</h2>
@@ -143,48 +121,22 @@
 	</section>
 	{{/if}}
 
-	{{#if resume.volunteer.length}}
-	<section class="experience">
-		<h2>Volunteering</h2>
-		{{#each resume.volunteer}}
+	{{#if resume.skills.length}}
+	<section id="skills">
+		<h2>Skills</h2>
+		{{#each resume.skills}}
 		<div class="item">
-			<header>
-				{{#if organization}}
-					<h3 class="name">{{organization}}</h3>
-				{{/if}}
-			</header>
-			{{#if position}}
-			<span class="position">
-				{{position}}
-			</span>
-			{{/if}}
-
-			{{#if startDate}}
-			<span class="startDate">
-				{{date startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{date endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- Present
-			</span>
-			{{/if}}
-
-			{{#if summary}}
-			<div class="summary">
-				<p>{{summary}}</p>
+			{{#if name}}
+			<div class="name">
+				{{name}}
 			</div>
 			{{/if}}
-			{{#if highlights.length}}
-			<ul class="highlights">
-				{{#each highlights}}
-				<li>{{.}}</li>
+			{{#if keywords.length}}
+			<div class="keywords">
+				{{#each keywords}}
+					{{.}}{{#if @last}}{{else}},{{/if}}
 				{{/each}}
-			</ul>
+			</div>
 			{{/if}}
 		</div>
 		{{/each}}
@@ -239,6 +191,54 @@
 				{{/if}}
 			</div>
 
+		</div>
+		{{/each}}
+	</section>
+	{{/if}}
+
+	{{#if resume.volunteer.length}}
+	<section class="experience">
+		<h2>Volunteering</h2>
+		{{#each resume.volunteer}}
+		<div class="item">
+			<header>
+				{{#if organization}}
+					<h3 class="name">{{organization}}</h3>
+				{{/if}}
+			</header>
+			{{#if position}}
+			<span class="position">
+				{{position}}
+			</span>
+			{{/if}}
+
+			{{#if startDate}}
+			<span class="startDate">
+				{{date startDate}}
+			</span>
+			{{/if}}
+			{{#if endDate}}
+			<span class="endDate">
+				- {{date endDate}}
+			</span>
+			{{else}}
+			<span class="endDate">
+				- Present
+			</span>
+			{{/if}}
+
+			{{#if summary}}
+			<div class="summary">
+				<p>{{summary}}</p>
+			</div>
+			{{/if}}
+			{{#if highlights.length}}
+			<ul class="highlights">
+				{{#each highlights}}
+				<li>{{.}}</li>
+				{{/each}}
+			</ul>
+			{{/if}}
 		</div>
 		{{/each}}
 	</section>
