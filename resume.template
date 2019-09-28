@@ -384,6 +384,12 @@
 	</section>
 	{{/if}}
 
+	{{#unless resume.projects.length }}
+		{{#unless resume.publications.length }}
+			Publications, Talks, and Projects available upon request.
+		{{/unless}}
+	{{/unless}}
+
 	</div>
 
 	</body>
